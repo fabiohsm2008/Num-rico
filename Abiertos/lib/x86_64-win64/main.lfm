@@ -1,0 +1,213 @@
+object Form1: TForm1
+  Left = 516
+  Height = 960
+  Top = 56
+  Width = 1424
+  Caption = 'Form1'
+  ClientHeight = 960
+  ClientWidth = 1424
+  OnCreate = FormCreate
+  LCLVersion = '1.8.2.0'
+  object Memo1: TMemo
+    Left = 523
+    Height = 368
+    Top = 568
+    Width = 301
+    ReadOnly = True
+    TabOrder = 0
+  end
+  object StringGrid1: TStringGrid
+    Left = 40
+    Height = 368
+    Top = 568
+    Width = 483
+    AutoFillColumns = True
+    ColCount = 3
+    Columns = <    
+      item
+        Title.Caption = 'N:'
+        Width = 159
+      end    
+      item
+        Title.Caption = 'Xn'
+        Width = 159
+      end    
+      item
+        Title.Caption = 'Error'
+        Width = 161
+      end>
+    FixedCols = 0
+    TabOrder = 1
+    ColWidths = (
+      159
+      159
+      161
+    )
+  end
+  object Panel1: TPanel
+    Left = 40
+    Height = 546
+    Top = 16
+    Width = 785
+    Caption = 'Panel1'
+    ClientHeight = 546
+    ClientWidth = 785
+    TabOrder = 2
+    object chartGraphics: TChart
+      Left = 1
+      Height = 544
+      Top = 1
+      Width = 783
+      AxisList = <      
+        item
+          Grid.Color = clSilver
+          Marks.LabelBrush.Style = bsClear
+          Minors = <>
+          Title.LabelFont.Orientation = 900
+          Title.LabelBrush.Style = bsClear
+        end      
+        item
+          Grid.Color = clSilver
+          Alignment = calBottom
+          Marks.LabelBrush.Style = bsClear
+          Minors = <>
+          Title.LabelBrush.Style = bsClear
+        end>
+      BackColor = clWhite
+      Foot.Brush.Color = clBtnFace
+      Foot.Font.Color = clBlue
+      Proportional = True
+      Title.Brush.Color = clBtnFace
+      Title.Font.Color = clBlue
+      Title.Text.Strings = (
+        'TAChart'
+      )
+      Align = alClient
+      object chartGraphicsFuncSeries1: TFuncSeries
+        Active = False
+        OnCalculate = chartGraphicsFuncSeries1Calculate
+      end
+      object chartGraphicsConstantLine1: TConstantLine
+        Arrow.Visible = True
+        LineStyle = lsVertical
+        Position = 0
+      end
+      object chartGraphicsConstantLine2: TConstantLine
+        Arrow.Visible = True
+        Position = 0
+      end
+      object chartGraphicsLineSeries1: TLineSeries
+        Pointer.Brush.Color = 13553407
+        Pointer.Pen.Color = clRed
+        Pointer.Style = psCircle
+      end
+      object chartGraphicsFuncSeries2: TFuncSeries
+        Active = False
+      end
+    end
+  end
+  object btnGraph: TButton
+    Left = 1046
+    Height = 25
+    Top = 240
+    Width = 147
+    Caption = 'Graph'
+    OnClick = btnGraphClick
+    TabOrder = 3
+  end
+  object trbMin: TTrackBar
+    Left = 1038
+    Height = 25
+    Top = 280
+    Width = 84
+    Max = -1
+    Min = -100
+    OnChange = trbMinChange
+    Position = -1
+    TabOrder = 4
+  end
+  object trbMax: TTrackBar
+    Left = 1118
+    Height = 25
+    Top = 280
+    Width = 78
+    Max = 100
+    Min = 1
+    OnChange = trbMaxChange
+    Position = 1
+    TabOrder = 5
+  end
+  object Label1: TLabel
+    Left = 944
+    Height = 15
+    Top = 355
+    Width = 91
+    Caption = 'Punto en el eje X:'
+    ParentColor = False
+  end
+  object ediX: TEdit
+    Left = 1058
+    Height = 23
+    Top = 355
+    Width = 129
+    TabOrder = 6
+    Text = '0'
+  end
+  object btnNewton: TButton
+    Left = 953
+    Height = 48
+    Top = 403
+    Width = 153
+    Caption = 'Newton'
+    OnClick = btnNewtonClick
+    TabOrder = 7
+  end
+  object btnSecante: TButton
+    Left = 1133
+    Height = 44
+    Top = 403
+    Width = 165
+    Caption = 'Secante'
+    OnClick = btnSecanteClick
+    TabOrder = 8
+  end
+  object lbler: TLabel
+    Left = 949
+    Height = 15
+    Top = 481
+    Width = 80
+    Caption = 'Error Permitido'
+    ParentColor = False
+  end
+  object ediEr: TEdit
+    Left = 1058
+    Height = 23
+    Top = 480
+    Width = 129
+    TabOrder = 9
+    Text = '0.000001'
+  end
+  object lblposible: TLabel
+    Left = 900
+    Height = 1
+    Top = 525
+    Width = 1
+    ParentColor = False
+  end
+  object edifuncion: TEdit
+    Left = 903
+    Height = 23
+    Top = 156
+    Width = 481
+    TabOrder = 10
+    Text = '( ( (1-x) * (power( (3+x),(1/2) ) ) ) / (x * (power( (x+1),(1/2) )) * power(5,(1/2)) )) - (3.06)'
+  end
+  object Label2: TLabel
+    Left = 864
+    Height = 15
+    Top = 160
+    Width = 31
+    Caption = 'f(x) = '
+    ParentColor = False
+  end
+end
